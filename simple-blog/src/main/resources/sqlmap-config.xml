@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 数据库方言 -->
+	<properties>
+		<property name="dialect" value="mysql" />
+	</properties>
+	<!-- 实体类别名 -->
+	<!-- <typeAliases >
+		<typeAlias alias="column" type="com.ct.entity.Column"/>
+		<typeAlias alias="city" type="com.ct.entity.City"/>
+		<typeAlias alias="article" type="com.ct.entity.Article"/>
+		<typeAlias alias="configOption" type="com.ct.entity.ConfigOption"/>
+	</typeAliases> -->
+</configuration>

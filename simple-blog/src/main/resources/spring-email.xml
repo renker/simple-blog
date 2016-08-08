@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<!-- 服务器 -->
+        <property name="host" value="smtp.163.com" />
+        <!-- 端口号 -->
+        <property name="port" value="25" />
+        <!-- 用户名 -->
+        <property name="username" value="caishenchen@163.com" />
+        <!--  密码   -->
+        <property name="password" value="ag1111ag"/>
+        <property name="protocol" value="smtp"></property>
+        <!-- SMTP服务器验证 -->
+        <property name="javaMailProperties">
+            <props>
+               <!-- 验证身份 -->
+               <prop key="mail.smtp.auth">true</prop>
+           </props>
+        </property>
+	</bean>
+	
+	<bean id="emailSender" class="com.ct.email.EmailSender">
+		<property name="javaMailSender" ref="mailSender" />
+	</bean>
+</beans>
