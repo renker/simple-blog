@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/manage/person")
 public class PersonController {
 	@RequestMapping("list")
-	@RequiresPermissions("person:list")
+	//@RequiresPermissions("person:list")
 	public String list(){
 		return "manage/person_list";
 	}

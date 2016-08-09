@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import com.ct.blog.person.service.IPersonService;
 
@@ -100,7 +101,8 @@ public class LoginController {
 	 * @return
 	 */
 	@RequestMapping("unauthorized")
-	public String unauthorized(){
-		return "manage/unauthorized";
+	public String unauthorized(Model model,HttpServletRequest request){
+		Exception exception = (Exception) request.getAttribute(SimpleMappingExceptionResolver.DEFAULT_EXCEPTION_ATTRIBUTE);
+		return "manage/unauthorized_view";
 	}
 }
