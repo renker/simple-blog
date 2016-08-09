@@ -4,9 +4,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>管理平台-登陆</title>
+    <title>登陆-管理平台</title>
 	<link rel="stylesheet" type="text/css" href="${ctx }/static/lib/bootstrap-3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="${ctx }/static/admin/login.css">
+	<link rel="stylesheet" type="text/css" href="${ctx }/static/manage/css/login.css">
 	<script type="text/javascript" src="${ctx }/static/lib/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
   </head>

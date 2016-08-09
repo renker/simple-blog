@@ -45,7 +45,8 @@
 				/manage/login=anon
 				/manage/doLogin=anon
 				/manage/unauthorized=anon
-				/manage/loginOut=logout
+				/manage/loginOut=anon
+				<!-- /manage/loginOut=logout -->
 				/manage/**=role[admin]
 			</value>
 		</property>
