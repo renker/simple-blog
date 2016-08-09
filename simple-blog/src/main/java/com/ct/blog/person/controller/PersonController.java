@@ -11,7 +11,7 @@ public class PersonController {
 	@RequestMapping("list")
 	//@RequiresPermissions("person:list")
 	public String list(){
-		return "manage/person_list";
+		return "manage/person/person_list";
 	}
 	
 	@RequestMapping("toCreate")

@@ -33,9 +33,19 @@
 				<h5 class="sidebartitle">菜单导航</h5>
 		      	<ul class="nav nav-pills nav-stacked nav-bracket">
 			        <li class="active"><a href="${ctx }/manage/home"><i class="fa fa-home"></i> <span>Home</span></a></li>
+			        
+			        <li class="nav-parent">
+			        	<a href=""><i class="fa fa-gear"></i> <span>设置</span></a>
+			        	<ul class="children">
+			        		<li><a href="${ctx }/manage/person/list"><i class="fa fa-caret-right"></i>用户管理</a></li>
+			        		<li><a href="${ctx }/manage/person/list"><i class="fa fa-caret-right"></i>用户管理</a></li>
+			        	</ul>
+			        </li>
+			        
 			        <li><a href="email.html"><span class="pull-right badge badge-success">2</span><i class="fa fa-envelope-o"></i> <span>Email</span></a></li>
-			        <li class="nav-parent"><a href=""><i class="fa fa-edit"></i> <span>Forms</span></a>
-				          	<ul class="children">
+			        <li class="nav-parent">
+			        	<a href=""><i class="fa fa-edit"></i> <span>Forms</span></a>
+			          	<ul class="children">
 				            <li><a href="general-forms.html"><i class="fa fa-caret-right"></i> General Forms</a></li>
 				            <li><a href="form-layouts.html"><i class="fa fa-caret-right"></i> Form Layouts</a></li>
 				            <li><a href="form-validation.html"><i class="fa fa-caret-right"></i> Form Validation</a></li>
