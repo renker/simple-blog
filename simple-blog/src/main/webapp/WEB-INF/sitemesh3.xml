@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<sitemesh defaultdir="/WEB-INF/views/">
+	<mapping path="/manage/login" exclude="false" />
+	<mapping path="/manage/*" decorator="/WEB-INF/views/manage/layouts/manage_layout.jsp" />
+</sitemesh>  
