@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>登陆-管理平台</title>
+    <title>登陆</title>
 	<link rel="stylesheet" type="text/css" href="${ctx }/static/lib/bootstrap-3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="${ctx }/static/manage/css/login.css">
 	<script type="text/javascript" src="${ctx }/static/lib/jquery-1.8.3.min.js"></script>
