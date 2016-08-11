@@ -14,8 +14,9 @@
 	<script type="text/javascript" src="${ctx }/static/lib/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/jquery.sparkline.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/jquery.cookies.js"></script>
-	<script type="text/javascript" src="${ctx }/static/lib/jquery.datatables/jquery.datatables.min.js"></script>
+	<script type="text/javascript" src="${ctx }/static/lib/jquery.datatables/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${ctx }/static/lib/layer/layer.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/manage/js/modernizr.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/manage/js/toggles.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/manage/js/retina.min.js"></script>

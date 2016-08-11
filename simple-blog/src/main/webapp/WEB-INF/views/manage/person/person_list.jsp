@@ -30,7 +30,7 @@
 						</div>
 					</div>
           		</div>
-          		<a class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;新增&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          		<a id="createBtn" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;新增&nbsp;&nbsp;&nbsp;&nbsp;</a>
           		<a class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;锁定&nbsp;&nbsp;&nbsp;&nbsp;</a>
           		<hr />
           		<div class="table-responsive">
@@ -84,9 +84,27 @@
 	
 	<script type="text/javascript">
 		$(function(){
-			var personList = [{"account":"caishenchen@163.com",root:1,status:1,aa:5,bb:0}];
-			$('#table1').dataTable({
-				"data":personList,
+			$("#createBtn").click(function(){
+				layer.open({
+				      type: 2,
+				      title: '很多时候，我们想最大化看，比如像这个页面。',
+				      shadeClose: true,
+				      shade: false,
+				      maxmin: true, //开启最大化最小化按钮
+				      area: ['893px', '600px'],
+				      content: '${ctx}/manage/person/toCreate'
+				    });
+			});
+			
+			var table = $('#table1').dataTable({
+				"searching":false,
+				"lengthChange": false,
+				order:[],
+				"ajax":{
+					url:"${ctx}/manage/person/list",
+					type:"POST",
+					dataSrc:"results"
+				},
 				"columns":[
 					{data:"account"},
 					{data:"root",render:function(data, type, row){
@@ -99,8 +117,8 @@
 					{data:"status",render:function(data, type, row){
 						return "正常";
 					}},
-					{data:"aa"},
-					{data:"bb"}
+					{data:"loginErrorAllowNum"},
+					{data:"loginErrorNum"}
 				],
 				"language":{
 				    "processing": "处理中...",
@@ -136,6 +154,7 @@
 				    "thousands": ".",
 				}
 			});
+			
 		});
 	</script>
 </body>

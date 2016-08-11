@@ -1,5 +1,8 @@
 package com.ct.blog.person.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +26,18 @@ public class PersonController extends BaseController{
 	}
 	
 	@RequestMapping(value="list",method=RequestMethod.POST)
+	@ResponseBody
 	public Page<Person> list(Page<Person> page){
+		List<Person> list = new ArrayList<Person>();
+		Person p = new Person();
+		p.setAccount("caishenchen@163.com");
+		p.setRoot(true);
+		p.setStatus(1);
+		p.setLoginErrorAllowNum(5);
+		p.setLoginErrorNum(0);
+		list.add(p);
+		
+		page.setResults(list);
 		return page;
 	}
 	

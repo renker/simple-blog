@@ -6,6 +6,7 @@
 <title>新增用户</title>
 </head>
 <body>
-	
+	<div class="contentpanel">
+	</div>
 </body>
 </html>
