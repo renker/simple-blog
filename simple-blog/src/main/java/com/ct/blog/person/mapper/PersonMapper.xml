@@ -140,4 +140,17 @@
     where tb.account = #{account,jdbcType=VARCHAR} and tb.password= #{password,jdbcType=VARCHAR}
   </select>
   
+  <select id="listByPage" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List" />
+    from blog_person tb
+    <where>
+    	<if test="condition.account != null">
+    		and tb.account = #{account,jdbcType=VARCHAR}
+    	</if>
+    	<if test="condition.status != null">
+    		and tb.status = #{status,jdbcType=INTEGER}
+    	</if>
+    </where>
+    <!-- order by ${} ${} -->
+  </select>
 </mapper>

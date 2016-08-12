@@ -14,6 +14,7 @@ import com.ct.blog.common.AjaxResult;
 import com.ct.blog.common.BaseController;
 import com.ct.blog.common.Page;
 import com.ct.blog.em.controller.Status;
+import com.ct.blog.person.condition.PersonCondition;
 import com.ct.blog.person.entity.Person;
 
 @Controller
@@ -27,7 +28,7 @@ public class PersonController extends BaseController{
 	
 	@RequestMapping(value="list",method=RequestMethod.POST)
 	@ResponseBody
-	public Page<Person> list(Page<Person> page){
+	public Page<Person> list(Page<Person> page,PersonCondition condition){
 		List<Person> list = new ArrayList<Person>();
 		Person p = new Person();
 		p.setAccount("caishenchen@163.com");
