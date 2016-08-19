@@ -122,12 +122,12 @@
 			$("#createBtn").click(function(){
 				layer.open({
 				      type: 2,
-				      title: '很多时候，我们想最大化看，比如像这个页面。',
+				      title: '新增用户',
 				      shadeClose: true,
 				      shade: false,
 				      maxmin: true, //开启最大化最小化按钮
 				      area: ['893px', '600px'],
-				      content: '${ctx}/manage/person/toCreate'
+				      content: '${ctx}/manage/person/toCreate/layer'
 				    });
 			});
 			

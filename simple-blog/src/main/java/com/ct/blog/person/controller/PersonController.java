@@ -42,7 +42,7 @@ public class PersonController extends BaseController{
 		return page;
 	}
 	
-	@RequestMapping("toCreate")
+	@RequestMapping("toCreate/layer")
 	public String toCreate(){
 		return "manage/person/person_create";
 	}

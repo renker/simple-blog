@@ -2,6 +2,6 @@
 <sitemesh defaultdir="/WEB-INF/views/">
 	<mime-type>text/html</mime-type>
 	<mapping path="/manage/login" exclude="false" />
-	<mapping path="/manage/person/toCreate" exclude="false"/>
+	<mapping path="/manage/**/layer" exclude="false" decorator="/WEB-INF/views/manage/layouts/manage_layer.jsp"/>
 	<mapping path="/manage/*" decorator="/WEB-INF/views/manage/layouts/manage_layout.jsp" />
 </sitemesh>  
