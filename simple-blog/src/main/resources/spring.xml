@@ -5,12 +5,14 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 	http://www.springframework.org/schema/context 
 	http://www.springframework.org/schema/context/spring-context-4.0.xsd
  	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
 	<!-- 扫描类包 自动将spring注解的类转化成bean 并完成注入 -->
 	<context:component-scan base-package="com.ct.blog"/>
@@ -48,6 +50,9 @@
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<import resource="spring-shiro.xml"/>
+	
+	<import resource="spring-redis.xml"/>
+	<cache:annotation-driven cache-manager="cacheManager" />
 	
 	<!-- <import resource="spring-email.xml"/> -->
 </beans>

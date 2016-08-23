@@ -3,6 +3,8 @@ package com.ct.blog.person.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,13 +18,24 @@ import com.ct.blog.common.Page;
 import com.ct.blog.em.controller.Status;
 import com.ct.blog.person.condition.PersonCondition;
 import com.ct.blog.person.entity.Person;
+import com.ct.blog.person.service.IPersonService;
 
 @Controller
 @RequestMapping("/manage/person")
 public class PersonController extends BaseController{
+	@Resource
+	private IPersonService personService;
+	
 	@RequestMapping(value="list",method=RequestMethod.GET)
 	//@RequiresPermissions("person:list")
 	public String listIndex(){
+		Person person = personService.selectByPrimaryKey("6E2FEA7CE7944222A54F0157160335E0");
+		System.out.println("1:>>>>"+person.toString());
+		
+		
+		Person person2 = personService.selectByPrimaryKey("6E2FEA7CE7944222A54F0157160335E0");
+		System.out.println("2:>>>>"+person.toString());
+		
 		return "manage/person/person_list";
 	}
 	

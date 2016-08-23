@@ -2,6 +2,7 @@ package com.ct.blog.person.service.impl;
 
 import javax.annotation.Resource;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +25,7 @@ public class PersonServiceImpl implements IPersonService {
 		return personMapper.insert(record);
 	}
 
+	@Cacheable(value="personCache")
 	public Person selectByPrimaryKey(String id) {
 		return personMapper.selectByPrimaryKey(id);
 	}
