@@ -30,19 +30,20 @@
 	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">  
     	<property name="securityManager" ref="securityManager"/>  
 	</bean>
-	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	
+	<!-- <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
                 <prop key="org.apache.shiro.authz.UnauthorizedException">forward:/manage/unauthorized</prop>
             </props>
         </property>
-        <!-- <property name="statusCodes">
+        <property name="statusCodes">
         	<props>     
                 <prop key="errors/error">500</prop>
                 <prop key="errors/404">404</prop>
             </props>
-        </property> -->
-    </bean>
+        </property>
+    </bean> -->
 	
 	<!-- 过滤静态资源 (与vc:annotation-driven 一起用) -->
 	<mvc:resources mapping="/static/**" location="/static/"/>

@@ -1,7 +1,7 @@
 package com.ct.blog.em.controller;
 
 public enum Status {
-	SUCCESS("success"),ERROR("error"),WARN("warn");
+	SUCCESS("success"),ERROR("error"),WARN("warn"),UNAUTHORIZED("unauthorized");
 	
 	private String value;
 	private Status(String value) {

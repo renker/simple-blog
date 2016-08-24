@@ -42,8 +42,8 @@
 			        <li class="nav-parent">
 			        	<a href=""><i class="fa fa-gear"></i> <span>设置</span></a>
 			        	<ul class="children">
-			        		<li><a href="${ctx }/manage/person/list"><i class="fa fa-caret-right"></i>用户管理</a></li>
-			        		<li><a href="${ctx }/manage/person/list"><i class="fa fa-caret-right"></i>用户管理</a></li>
+			        		<li><a href="${ctx }/manage/person/index"><i class="fa fa-caret-right"></i>用户管理</a></li>
+			        		<li><a href="${ctx }/manage/person/index"><i class="fa fa-caret-right"></i>用户管理</a></li>
 			        	</ul>
 			        </li>
 			        

@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,7 +47,7 @@
               <div class="panel-footer">
                 <div class="row">
                   <div class="col-sm-9 col-sm-offset-2">
-                    <button class="btn btn-primary">保存</button>
+                    <button id="submit" class="btn btn-primary ajax" type="button">保存</button>
                     <button type="reset" class="btn btn-default">重置</button>
                   </div>
                 </div>
@@ -57,5 +59,16 @@
           
         </div><!-- col-md-6 -->
 	</div>
+	
+	<script type="text/javascript">
+	
+		$(function(){
+			$("#submit").click(function(){
+				$.post("${ctx}/manage/person/doCreate",function(data){
+					
+				});
+			});
+		});
+	</script>
 </body>
 </html>

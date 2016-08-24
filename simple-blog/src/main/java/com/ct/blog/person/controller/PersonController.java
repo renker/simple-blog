@@ -26,16 +26,9 @@ public class PersonController extends BaseController{
 	@Resource
 	private IPersonService personService;
 	
-	@RequestMapping(value="list",method=RequestMethod.GET)
-	//@RequiresPermissions("person:list")
-	public String listIndex(){
-		Person person = personService.selectByPrimaryKey("6E2FEA7CE7944222A54F0157160335E0");
-		System.out.println("1:>>>>"+person.toString());
-		
-		
-		Person person2 = personService.selectByPrimaryKey("6E2FEA7CE7944222A54F0157160335E0");
-		System.out.println("2:>>>>"+person.toString());
-		
+	@RequestMapping(value="index",method=RequestMethod.GET)
+	// @RequiresPermissions("person:list")
+	public String index(){
 		return "manage/person/person_list";
 	}
 	
@@ -60,10 +53,11 @@ public class PersonController extends BaseController{
 		return "manage/person/person_create";
 	}
 	
+	@RequiresPermissions("person:list")
 	@RequestMapping("doCreate")
 	@ResponseBody
 	public AjaxResult doAdd(){
-		return ajaxResult(Status.ERROR);
+		return ajaxResult(Status.SUCCESS);
 	}
 	
 	@RequestMapping("toEdit/{id}")
@@ -75,4 +69,5 @@ public class PersonController extends BaseController{
 	public String doEdit(){
 		return "";
 	}
+	
 }
