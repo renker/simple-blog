@@ -32,7 +32,6 @@
           		</div> -->
           		<a id="createBtn" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;新增&nbsp;&nbsp;&nbsp;&nbsp;</a>
           		<a class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;锁定&nbsp;&nbsp;&nbsp;&nbsp;</a>
-          		<hr />
           		<div class="table-responsive">
             		<table class="table" id="table1">
 						<thead>
@@ -47,36 +46,6 @@
 							</tr>
 		              	</thead>
               			<tbody>
-			                 <!-- <tr class="gradeA">
-			                    <td>caishenchen@163.com</td>
-			                    <td>是</td>
-			                    <td>正常</td>
-			                    <td class="center">5</td>
-			                    <td class="center">0</td>
-			                 </tr>
-			                 <tr class="gradeA">
-			                    <td>caishenchen@163.com</td>
-			                    <td>是</td>
-			                    <td>正常</td>
-			                    <td class="center">5</td>
-			                    <td class="center">0</td>
-			                 </tr>
-			                 
-			                 <tr class="gradeA">
-			                    <td>caishenchen@163.com</td>
-			                    <td>是</td>
-			                    <td>正常</td>
-			                    <td class="center">5</td>
-			                    <td class="center">0</td>
-			                 </tr>
-			                 
-			                 <tr class="gradeA">
-			                    <td>caishenchen@163.com</td>
-			                    <td>是</td>
-			                    <td>正常</td>
-			                    <td class="center">5</td>
-			                    <td class="center">0</td>
-			                 </tr> -->
 						</tbody>
 					</table>
 				</div><!-- table-responsive -->

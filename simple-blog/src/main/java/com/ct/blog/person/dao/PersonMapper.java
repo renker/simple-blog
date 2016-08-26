@@ -1,5 +1,7 @@
 package com.ct.blog.person.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -22,4 +24,6 @@ public interface PersonMapper {
     Person findByAccount(String account);
     
     Person findByAccountAndPassword(@Param("account")String account,@Param("password")String password);
+    
+    List<Person> page();
 }

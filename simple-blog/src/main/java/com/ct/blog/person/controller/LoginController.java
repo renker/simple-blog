@@ -118,7 +118,6 @@ public class LoginController extends BaseController{
 	@RequestMapping("unauthorizedAjax")
 	@ResponseBody
 	public AjaxResult unauthorizedAjax(Model model,HttpServletRequest request,String errorMsg){
-		
 		return ajaxResult(Status.UNAUTHORIZED,errorMsg);
 	}
 }

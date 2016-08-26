@@ -12,35 +12,32 @@
 		<div class="col-md-6">
           <form id="basicForm" action="form-validation.html" class="form-horizontal">
           <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">用户信息</h4>
-              </div>
               <div class="panel-body">
                 <div class="form-group">
                   <label class="col-sm-2 control-label">账号 <span class="asterisk">*</span></label>
                   <div class="col-sm-9">
-                    <input type="text" name="account" class="form-control" placeholder="Type your name..." required />
+                    <input type="text" name="account" class="form-control" placeholder="请输入账号..." required />
                   </div>
                 </div>
                 
                 <div class="form-group">
                   <label class="col-sm-2 control-label">密码 <span class="asterisk">*</span></label>
                   <div class="col-sm-9">
-                    <input type="password" name="password" class="form-control" placeholder="Type your email..." required />
+                    <input type="password" name="password" class="form-control" placeholder="请输入密码..." required />
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">重复密码<span class="asterisk">*</span></label>
+                  <label class="col-sm-2 control-label">确认密码<span class="asterisk">*</span></label>
                   <div class="col-sm-9">
-                    <input type="password" name="repassword" class="form-control" />
+                    <input type="password" name="repassword" class="form-control" placeholder="请确认密码..."/>
                   </div>
                 </div>
                 
                 <div class="form-group">
                   <label class="col-sm-2 control-label">备注</label>
                   <div class="col-sm-9">
-                    <textarea name="remark" rows="5" class="form-control" placeholder="Type your comment..." required></textarea>
+                    <textarea name="remark" rows="5" class="form-control" placeholder="请输入备注..." required></textarea>
                   </div>
                 </div>
               </div><!-- panel-body -->

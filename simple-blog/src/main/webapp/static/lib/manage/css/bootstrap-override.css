@@ -1,4 +1,4 @@
-﻿/*
+/*
 Created by: @themepixels
 URL: http://themepixels.com/
 */
@@ -154,7 +154,7 @@ h4, .h4 {
    -moz-transition: all 0.2s ease-out 0s;
    -webkit-transition: all 0.2s ease-out 0s;
    transition: all 0.2s ease-out 0s;
-   padding: 9px 15px;
+   padding: 5px 15px;
 }
 
 .btn:focus {

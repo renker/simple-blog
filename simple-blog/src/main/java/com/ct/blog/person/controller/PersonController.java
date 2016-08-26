@@ -53,11 +53,17 @@ public class PersonController extends BaseController{
 		return "manage/person/person_create";
 	}
 	
-	@RequiresPermissions("person:list")
-	@RequestMapping("doCreate")
+	@RequiresPermissions("person.toCreate")
+	@RequestMapping(value="doCreate",method=RequestMethod.POST)
 	@ResponseBody
-	public AjaxResult doAdd(){
-		return ajaxResult(Status.SUCCESS);
+	public AjaxResult doAdd(Person person){
+		try {
+			personService.insert(person);
+			return ajaxResult(Status.SUCCESS);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ajaxResult(Status.ERROR);
 	}
 	
 	@RequestMapping("toEdit/{id}")
