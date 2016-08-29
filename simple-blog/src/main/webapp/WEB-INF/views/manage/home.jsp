@@ -6,6 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>主页</title>
+	<script type="text/javascript" src="${ctx }/static/lib/layer/layer.override.js"></script>
 </head>
 <body>
 	<div class="contentpanel">
@@ -1088,7 +1089,9 @@
   </div><!-- rightpanel -->
 	<script type="text/javascript">
 		$(function(){
-			$('#table1').dataTable();
+			//$('#table1').dataTable();
+			//$.alert(1);
+			var socket = new WebSocket('ws://localhost:8080');
 		});
 	</script>
 </body>

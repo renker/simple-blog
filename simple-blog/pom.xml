@@ -242,6 +242,14 @@
 		    <artifactId>jedis</artifactId>
 		    <version>2.7.3</version>
 		</dependency>
+		
+		
+		<dependency>
+		    <groupId>javax.websocket</groupId>
+		    <artifactId>javax.websocket-api</artifactId>
+		    <version>1.1</version>
+		</dependency>
+		
   </dependencies>
   
   
