@@ -140,17 +140,26 @@
     where tb.account = #{account,jdbcType=VARCHAR} and tb.password= #{password,jdbcType=VARCHAR}
   </select>
   
-  <select id="listByPage" resultMap="BaseResultMap">
-  	select <include refid="Base_Column_List" />
-    from blog_person tb
-    <where>
-    	<if test="condition.account != null">
-    		and tb.account = #{account,jdbcType=VARCHAR}
+  <sql id="pageCondition">
+  	<where>
+  		<if test="condition.account != null">
+    		and tb.account = #{condition.account,jdbcType=VARCHAR}
     	</if>
     	<if test="condition.status != null">
-    		and tb.status = #{status,jdbcType=INTEGER}
+    		and tb.status = #{condition.status,jdbcType=INTEGER}
     	</if>
-    </where>
+  	</where>
+  </sql>
+  <select id="listPage" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List" />
+    from blog_person tb
+    <include refid="pageCondition"></include>
     <!-- order by ${} ${} -->
+  </select>
+  
+  <select id="listPageCount" resultType="int">
+  	select count(id)
+    from blog_person tb
+    <include refid="pageCondition"></include>
   </select>
 </mapper>

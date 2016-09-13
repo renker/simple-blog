@@ -1,10 +1,13 @@
 package com.ct.blog.person.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;
 
+import com.ct.blog.person.condition.PersonCondition;
 import com.ct.blog.person.entity.Person;
 
 @Repository
@@ -25,5 +28,7 @@ public interface PersonMapper {
     
     Person findByAccountAndPassword(@Param("account")String account,@Param("password")String password);
     
-    List<Person> page();
+    List<Person> listPage(@Param("condition")PersonCondition condition,RowBounds rowBounds);
+    
+    int listPageCount(@Param("condition")PersonCondition condition);
 }

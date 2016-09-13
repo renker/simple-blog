@@ -66,4 +66,8 @@ public class Page<T> implements Serializable{
 		this.rule = rule;
 	}
 	
+	public int getCurrentPageIndex(){
+		return this.currentPage >0?(this.currentPage-1)*this.pageSize:0;
+	}
+	
 }

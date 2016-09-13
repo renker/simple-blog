@@ -35,16 +35,7 @@ public class PersonController extends BaseController{
 	@RequestMapping(value="list",method=RequestMethod.POST)
 	@ResponseBody
 	public Page<Person> list(Page<Person> page,PersonCondition condition){
-		List<Person> list = new ArrayList<Person>();
-		Person p = new Person();
-		p.setAccount("caishenchen@163.com");
-		p.setRoot(true);
-		p.setStatus(1);
-		p.setLoginErrorAllowNum(5);
-		p.setLoginErrorNum(0);
-		list.add(p);
-		
-		page.setResults(list);
+		page = personService.listPage(page, condition);
 		return page;
 	}
 	

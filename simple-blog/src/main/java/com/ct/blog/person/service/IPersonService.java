@@ -1,7 +1,10 @@
 package com.ct.blog.person.service;
 
-import com.ct.blog.person.entity.Person;
+import java.util.Map;
 
+import com.ct.blog.common.Page;
+import com.ct.blog.person.condition.PersonCondition;
+import com.ct.blog.person.entity.Person;
 public interface IPersonService {
 	int deleteByPrimaryKey(String id);
 
@@ -14,4 +17,6 @@ public interface IPersonService {
     Person login(String account);
     
     Person login(String account,String password);
+    
+    Page<Person> listPage(Page<Person> page,PersonCondition condition);
 }
