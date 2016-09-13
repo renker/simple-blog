@@ -19,6 +19,8 @@ import com.ct.blog.em.controller.Status;
 import com.ct.blog.person.condition.PersonCondition;
 import com.ct.blog.person.entity.Person;
 import com.ct.blog.person.service.IPersonService;
+import com.ct.blog.utils.MD5Util;
+import com.ct.blog.utils.UUIDUtil;
 
 @Controller
 @RequestMapping("/manage/person")
@@ -49,6 +51,9 @@ public class PersonController extends BaseController{
 	@ResponseBody
 	public AjaxResult doAdd(Person person){
 		try {
+			person.setId(UUIDUtil.randomUUID());
+			person.setSalt(UUIDUtil.randomUUID());
+			person.setPassword(MD5Util.MD5(person.getPassword(), person.getSalt()));
 			personService.insert(person);
 			return ajaxResult(Status.SUCCESS);
 		} catch (Exception e) {

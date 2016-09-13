@@ -43,7 +43,9 @@
 			        	<a href=""><i class="fa fa-gear"></i> <span>设置</span></a>
 			        	<ul class="children">
 			        		<li><a href="${ctx }/manage/person/index"><i class="fa fa-caret-right"></i>用户管理</a></li>
-			        		<li><a href="${ctx }/manage/person/index"><i class="fa fa-caret-right"></i>用户管理</a></li>
+			        		<li><a href="${ctx }/manage/person/index"><i class="fa fa-caret-right"></i>角色管理</a></li>
+			        		<li><a href="${ctx }/manage/person/index"><i class="fa fa-caret-right"></i>权限管理</a></li>
+			        		<li><a href="${ctx }/manage/person/index"><i class="fa fa-caret-right"></i>资源管理</a></li>
 			        	</ul>
 			        </li>
 			        

@@ -10,7 +10,7 @@
 <body>
 	<div class="contentpanel">
 		<div class="col-md-6">
-          <form id="basicForm" action="form-validation.html" class="form-horizontal">
+          <form id="basicForm" action="" class="form-horizontal">
           <div class="panel panel-default">
               <div class="panel-body">
                 <div class="form-group">
@@ -37,7 +37,7 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label">备注</label>
                   <div class="col-sm-9">
-                    <textarea name="remark" rows="5" class="form-control" placeholder="请输入备注..." required></textarea>
+                    <textarea name="remark" rows="5" class="form-control" placeholder="请输入备注..."></textarea>
                   </div>
                 </div>
               </div><!-- panel-body -->
@@ -61,9 +61,11 @@
 	
 		$(function(){
 			$("#submit").click(function(){
-				$.post("${ctx}/manage/person/doCreate",function(data){
-					
-				});
+				
+				alert($("#basicForm").valid());
+				/* $.post("${ctx}/manage/person/doCreate",$("#basicForm").serializeArray(),function(data){
+					$.msg("保存成功");
+				}); */
 			});
 		});
 	</script>

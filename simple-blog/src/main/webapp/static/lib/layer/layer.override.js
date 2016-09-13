@@ -11,4 +11,10 @@
 		}
 	});
 	
+	$.extend({
+		msg:function(msg){
+			layer.msg(msg);
+		}
+	});
+	
 })(jQuery, document);
