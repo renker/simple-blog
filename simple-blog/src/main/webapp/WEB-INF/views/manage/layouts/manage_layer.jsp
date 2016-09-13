@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="${ctx }/static/lib/jquery.datatables/css/jquery.datatables.css">
 	
 	<script type="text/javascript" src="${ctx }/static/lib/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="${ctx }/static/lib/jquery-validate.min.js"></script>
+	<script type="text/javascript" src="${ctx }/static/lib/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/jquery.sparkline.min.js"></script>
 	<script type="text/javascript" src="${ctx }/static/lib/jquery.cookies.js"></script>
