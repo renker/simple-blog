@@ -25,7 +25,6 @@
 		<property name="realm" ref="adminRealm"></property>
 		<property name="rememberMeManager" ref="rememberMeManager"/>
 		<property name="sessionManager" ref="sessionManager"/>
-		
 		<property name="cacheManager" ref="redisCacheManager"></property>
 	</bean>
 	
@@ -51,7 +50,8 @@
 				/manage/unauthorized=anon
 				/manage/loginOut=anon
 				<!-- /manage/loginOut=logout -->
-				/manage/**=role[admin]
+				<!-- 如果启动rememberMe 则需要启用 user拦截器 -->
+				/manage/**=authc
 			</value>
 		</property>
 	</bean>
