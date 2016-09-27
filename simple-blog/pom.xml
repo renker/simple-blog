@@ -203,6 +203,7 @@
 			<version>${org.apache.shiro.version}</version>
 		</dependency>
 		
+		<!-- 扩展shiro对redis支持的第三方jar -->
 		<dependency>
 		    <groupId>org.crazycake</groupId>
 		    <artifactId>shiro-redis</artifactId>
