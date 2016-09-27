@@ -59,8 +59,8 @@
 	<!-- 会话ID生成器 -->  
 	<bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
 	
-	<!-- 会话DAO -->  
-	<bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">  
+	<!-- 会话DAO 覆盖 org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO-->  
+	<bean id="sessionDAO" class="com.ct.blog.shiro.session.MyCachingSessionDao">  
     	<property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>
     	<property name="sessionIdGenerator" ref="sessionIdGenerator"/>  
 	</bean>  
