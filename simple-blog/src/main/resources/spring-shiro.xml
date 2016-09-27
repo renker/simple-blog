@@ -23,7 +23,10 @@
 	<!-- 安全管理器 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="adminRealm"></property>
-		<property name="rememberMeManager" ref="rememberMeManager"/> 
+		<property name="rememberMeManager" ref="rememberMeManager"/>
+		<property name="sessionManager" ref="sessionManager"/>
+		
+		<property name="cacheManager" ref="redisCacheManager"></property>
 	</bean>
 	
 	<bean id="adminShiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
@@ -53,11 +56,33 @@
 		</property>
 	</bean>
 	
+	<!-- 会话ID生成器 -->  
+	<bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
 	
-	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
-		<constructor-arg value="sid"></constructor-arg>
-		<property name="httpOnly" value="true"/>  
-    	<property name="maxAge" value="-1"/><!-- session 保存 1小时 -->
+	<!-- 会话DAO -->  
+	<bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">  
+    	<property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>
+    	<property name="sessionIdGenerator" ref="sessionIdGenerator"/>  
+	</bean>  
+	
+	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">  
+        <property name="name" value="JESSIONID" />  
+        <property name="path" value="/" />  
+	</bean>
+	
+	<!-- 会话管理 -->
+	<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+		<!-- session 有效期 默认30分钟 -->
+		<property name="globalSessionTimeout" value="1800000"/>  
+		<property name="deleteInvalidSessions" value="true"/>
+		<!-- 会话验证器调度时间  30秒-->  
+        <property name="sessionValidationInterval" value="30000" />
+		<property name="sessionValidationSchedulerEnabled" value="true"/>  
+		<!-- <property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>   -->
+		
+		<property name="sessionDAO" ref="sessionDAO"/>
+		<property name="sessionIdCookieEnabled" value="true" />
+		<property name="sessionIdCookie" ref="sessionIdCookie" />
 	</bean>
 	
 	<bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">  
@@ -68,6 +93,20 @@
 	
 	<bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
 		<property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}"></property>
-		<property name="cookie" ref="sessionIdCookie"></property>
+		<property name="cookie" ref="rememberMeCookie"></property>
 	</bean>
+	
+	<bean id="redisManager" class="org.crazycake.shiro.RedisManager">
+		<property name="host" value="${redis.hostName}"></property>
+		<property name="port" value="${redis.port}"></property>
+		<property name="password" value="${redis.password}"></property>
+		<property name="timeout" value="10000"></property>
+		<property name="expire" value="1800000"></property>
+	</bean>
+	
+	<bean id="redisCacheManager" class="org.crazycake.shiro.RedisCacheManager">
+		<property name="keyPrefix" value="shiro_redis_cache:"></property>
+		<property name="redisManager" ref="redisManager" />
+	</bean>
+	
 </beans>
