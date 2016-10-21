@@ -35,7 +35,8 @@
 		<property name="unauthorizedUrl" value="/manage/unauthorized"></property>
 		<property name="filters">
 			<map>
-				<entry key="role"><bean class="com.ct.blog.shiro.filter.RolesAuthorizationFilter" /></entry>
+				<entry key="roles"><bean class="com.ct.blog.shiro.filter.RolesAuthorizationFilter" /></entry>
+				<entry key="perms"><bean class="com.ct.blog.shiro.filter.PermissionsAuthorizationFilter" /></entry>
 			</map>
 		</property>
 		<property name="filterChainDefinitionMap" ref="chainDefinitionSectionMetaSource"></property>
@@ -50,8 +51,9 @@
 				/manage/unauthorized=anon
 				/manage/loginOut=anon
 				<!-- /manage/loginOut=logout -->
-				<!-- 如果启动rememberMe 则需要启用 user拦截器 -->
-				/manage/**=authc
+				<!-- 如果启动rememberMe 则需要启用 user拦截器 
+				/manage/**=authc -->
+				/manage/**=roles[admin,user],perms[person.toCreate]
 			</value>
 		</property>
 	</bean>
