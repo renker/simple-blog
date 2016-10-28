@@ -54,5 +54,8 @@
 	<import resource="spring-redis.xml"/>
 	<cache:annotation-driven cache-manager="cacheManager" />
 	
+	
+	<import resource="spring-quartz.xml"/>
+	
 	<!-- <import resource="spring-email.xml"/> -->
 </beans>
