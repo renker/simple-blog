@@ -47,7 +47,7 @@
 	</bean>  
 	
 	<bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">
-		<!-- <beans:constructor-arg name="template"  /> -->
 		<constructor-arg ref="redisTemplate" />
+		<property name="defaultExpiration" value="30"></property>
 	</bean>
 </beans>
