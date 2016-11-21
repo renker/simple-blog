@@ -6,18 +6,17 @@ import java.lang.reflect.Method;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.quartz.PersistJobDataAfterExecution;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
-import com.ct.blog.person.service.IPersonService;
-import com.ct.blog.person.service.impl.PersonServiceImpl;
-
 /**
  * @author Tao
  */
+@PersistJobDataAfterExecution
 @DisallowConcurrentExecution
 public class QuartzProxyJob extends QuartzJobBean{
 	Logger logger = LoggerFactory.getLogger(QuartzProxyJob.class);
